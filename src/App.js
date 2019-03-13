@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Login from "./app/containers/Login";
+import Dashboard from "./app/containers/Dashboard";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <header className="App-header">
-            <Login />
+            <Dashboard />
         </header>
       </div>
     );
