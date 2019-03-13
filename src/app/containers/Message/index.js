@@ -27,7 +27,7 @@ class Message extends React.PureComponent
             <div>
                 <Row>
                     <Col lg={12}>
-                        <span className="right-top-top">Design Team</span>
+                        <p className="right-top-top"><b>Design Team</b></p>
                     </Col>
                 </Row>
                 <Row>
