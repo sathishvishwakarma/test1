@@ -14,17 +14,19 @@ class UserList extends React.PureComponent
             activeUserEmail:'',
             activeUserImage:'',
             friendId:'',
+            userdId:'',
         };
 
     }
 
     componentWillReceiveProps(props){
+        this.setState({userdId:props.userdId});
         this.getFriendsLists(props);
         this.getUserInfo(props)
     }
 
     selectedFriend(friendId) {
-        this.props.selectedFriend(friendId);
+        this.props.selectedFriend(friendId,this.state.userdId);
     }
 
     getFriendsLists(props) {

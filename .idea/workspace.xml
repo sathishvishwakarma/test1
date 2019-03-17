@@ -2,16 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a90b34a-6c15-46d3-80d1-4377dbecc65c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/containers/Dashboard/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/Dashboard/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/containers/Message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/Message/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/containers/Message/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/Message/style.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/containers/UserList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/UserList/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/containers/UserList/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/UserList/style.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,7 +36,7 @@
           <entry key="js" value="24" />
           <entry key="json" value="1" />
           <entry key="md" value="3" />
-          <entry key="scss" value="6" />
+          <entry key="scss" value="7" />
           <entry key="ts" value="1" />
           <entry key="xml" value="1" />
         </counts>
@@ -54,7 +50,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="24" />
           <entry key="Markdown" value="3" />
-          <entry key="SCSS" value="6" />
+          <entry key="SCSS" value="7" />
           <entry key="TypeScript" value="1" />
           <entry key="XML" value="1" />
         </counts>
@@ -69,8 +65,8 @@
           <entry key="css" value="72" />
           <entry key="env" value="3" />
           <entry key="html" value="1" />
-          <entry key="js" value="7845" />
-          <entry key="scss" value="1186" />
+          <entry key="js" value="8691" />
+          <entry key="scss" value="1305" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -78,8 +74,8 @@
           <entry key=".env file" value="3" />
           <entry key="CSS" value="72" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="7845" />
-          <entry key="SCSS" value="1186" />
+          <entry key="JavaScript" value="8691" />
+          <entry key="SCSS" value="1305" />
         </counts>
       </usages-collector>
     </session>
@@ -107,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
+            <state relative-caret-position="237">
+              <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -119,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/containers/Dashboard/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            <state relative-caret-position="495">
+              <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -134,8 +130,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="55" column="69" selection-start-line="55" selection-start-column="69" selection-end-line="55" selection-end-column="69" />
+            <state relative-caret-position="286">
+              <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -146,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/containers/Message/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+            <state relative-caret-position="205">
+              <caret line="68" column="36" lean-forward="true" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -156,10 +152,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/style.scss">
+        <entry file="file://$PROJECT_DIR$/src/app/containers/Message/style.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
+            <state relative-caret-position="235">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -176,15 +172,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>getFirendInfo</find>
-      <find>iconName</find>
-      <find>active</find>
-      <find>chatLists</find>
-      <find>activeFriendImg</find>
-      <find>activeFriendEmail</find>
-      <find>left-middle-mid</find>
-      <find>activeFriend</find>
-      <find>this.props</find>
       <find>this.props.</find>
       <find>friends</find>
       <find>activeUse</find>
@@ -201,11 +188,20 @@
       <find>this.state.friendId</find>
       <find>{friendId:</find>
       <find>getUserInfo</find>
-      <find>userId</find>
       <find>this.state.userId</find>
       <find>activeUser</find>
       <find>getFriendsLists</find>
       <find>friendId</find>
+      <find>chatLists</find>
+      <find>activeFriendImg</find>
+      <find>activeFriend</find>
+      <find>right-top-middle</find>
+      <find />
+      <find>right-top-middle</find>
+      <find>right-top-middle-msg-content</find>
+      <find>api/chat/sendChat</find>
+      <find>userId</find>
+      <find>handleTextChange</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -225,14 +221,14 @@
         <option value="$PROJECT_DIR$/src/index.js" />
         <option value="$PROJECT_DIR$/src/app/containers/Login/style.scss" />
         <option value="$PROJECT_DIR$/src/app/containers/Login/index.js" />
-        <option value="$PROJECT_DIR$/src/app/containers/Message/style.scss" />
         <option value="$PROJECT_DIR$/src/app/containers/Dashboard/style.scss" />
         <option value="$PROJECT_DIR$/.env" />
-        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/app/containers/UserList/style.scss" />
-        <option value="$PROJECT_DIR$/src/app/containers/Message/index.js" />
+        <option value="$PROJECT_DIR$/src/app/containers/Message/style.scss" />
         <option value="$PROJECT_DIR$/src/app/containers/UserList/index.js" />
+        <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/app/containers/Dashboard/index.js" />
+        <option value="$PROJECT_DIR$/src/app/containers/Message/index.js" />
       </list>
     </option>
   </component>
@@ -268,6 +264,32 @@
             <path>
               <item name="test1" type="b2602c69:ProjectViewProjectNode" />
               <item name="test1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="containers" type="462c0819:PsiDirectoryNode" />
+              <item name="Message" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,12 +346,12 @@
       <workItem from="1550304590139" duration="7000" />
       <workItem from="1550306930176" duration="2054000" />
       <workItem from="1551424152086" duration="1278000" />
-      <workItem from="1552382971754" duration="38602000" />
+      <workItem from="1552382971754" duration="46592000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50859000" />
+    <option name="totallyTimeSpent" value="58849000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,10 +379,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861635" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32861635" />
+      <window_info anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32861635" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32861635" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32861635" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -442,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/containers/Message/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/containers/Dashboard/style.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -515,30 +530,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.js">
+    <entry file="file://$PROJECT_DIR$/src/app/containers/Message/style.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="23" column="43" lean-forward="true" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="235">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/containers/Message/index.js">
+    <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
+        <state relative-caret-position="286">
+          <caret line="28" column="59" selection-start-line="28" selection-start-column="59" selection-end-line="28" selection-end-column="59" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/index.js">
+    <entry file="file://$PROJECT_DIR$/src/app/containers/Message/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="55" column="69" selection-start-line="55" selection-start-column="69" selection-end-line="55" selection-end-column="69" />
+        <state relative-caret-position="205">
+          <caret line="68" column="36" lean-forward="true" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="36" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -547,10 +559,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/containers/Dashboard/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+        <state relative-caret-position="495">
+          <caret line="33" column="70" selection-start-line="33" selection-start-column="70" selection-end-line="33" selection-end-column="70" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="16" column="34" lean-forward="true" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

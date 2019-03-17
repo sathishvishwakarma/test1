@@ -16,10 +16,16 @@
   top: 50px;
   width: 30%;
   height: 75%;
+  overflow: scroll !important;
   margin-left: 23% !important;
   background-color: white;
   color: black;
   text-align: center;
+  .right-top-middle-msg-content {
+    background-color: lightgray !important;
+    margin-left: 15px !important;
+    width: 100% !important;
+  }
   .right-top-middle-left {
     float: left !important;
   }

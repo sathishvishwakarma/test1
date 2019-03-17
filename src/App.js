@@ -6,16 +6,16 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            text: '',
             userId: '',
             friendId:2,
-            chats: "sdfdsfdsfsdf"
+            chats: ""
         };
     }
 
     componentDidMount() {
         const userId = window.prompt('Enter Your User Id: ');
         this.setState({ userId });
+        localStorage.setItem('userId', userId);
     }
 
     render() {

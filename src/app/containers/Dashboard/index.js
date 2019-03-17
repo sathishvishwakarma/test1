@@ -10,6 +10,7 @@ class Dashboard extends React.PureComponent {
         super(props);
         this.state = {
             friendId:'',
+            userId:localStorage.getItem('userId'),
         };
 
         this.selectedFriend = this.selectedFriend.bind(this);
@@ -30,7 +31,7 @@ class Dashboard extends React.PureComponent {
                                 <UserList userId={this.props.userId} friendId={this.state.friendId} selectedFriend={this.selectedFriend} />
                             </Col>
                             <Col lg={9}>
-                                <Message userId={this.props.userId} friendId={this.state.friendId} />
+                                <Message userId={this.state.userId} friendId={this.state.friendId} />
                             </Col>
                         </Row>
                     </Col>

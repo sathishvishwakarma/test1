@@ -15,38 +15,15 @@ class Message extends React.PureComponent
             activeFriend:'',
             activeFriendEmail:'',
             activeFriendImg:'',
-            friendId:2,
-            userId:1
+            friendId:props.friendId,
+            userId:props.userId
         };
     }
 
-    componentWillMount(){
-
-    }
-
-    getFriendInfo(props) {
-        return axios.get('http://dev.testapi.com/api/'+props.friendId).then((response) => {
-            if(response && response.data) {
-                this.setState({activeFriend:response.data.name,activeFriendEmail:response.data.email,activeFriendImg:response.data.profile_img});
-            }
-        }).catch((error) => {
-            console.log('errors are user info', error);
-        });
-    }
-
-    getChatList(props) {
-        return axios.post('http://dev.testapi.com/api/getMessage/'+props.userId+'/'+props.friendId).then((response) => {
-            if(response && response.data) {
-                this.setState({chatLists:response.data[0].chats});
-            }
-        }).catch((error) => {
-            console.log('errors are user info', error);
-        });
-    }
-
     componentWillReceiveProps(props) {
-        this.getFriendInfo(props);
-        this.getChatList(props);
+        this.setState({userID:props.userID,friendId:props.friendId});
+        this.getFriendInfo(props.friendId);
+        this.getChatList(props.userId,props.friendId);
         const pusher = new Pusher('5ce01ba62feee7d08f63', {
             cluster: 'ap2',
             encrypted: true
@@ -57,30 +34,38 @@ class Message extends React.PureComponent
         });
         this.handleTextChange = this.handleTextChange.bind(this);
     }
-    // componentDidMount(){
-    //     this.getFriendInfo();
-    //     this.getChatList();
-    //
-    //     const pusher = new Pusher('5ce01ba62feee7d08f63', {
-    //         cluster: 'ap2',
-    //         encrypted: true
-    //     });
-    //     const channel = pusher.subscribe('chat');
-    //     channel.bind('message', data => {
-    //         this.setState({ chats: [...this.state.chats, data], test: '' });
-    //     });
-    //     this.handleTextChange = this.handleTextChange.bind(this);
-    // }
+
+    getFriendInfo(friendId) {
+        return axios.get('http://dev.testapi.com/api/'+friendId).then((response) => {
+            if(response && response.data) {
+                this.setState({activeFriend:response.data.name,activeFriendEmail:response.data.email,activeFriendImg:response.data.profile_img});
+            }
+        }).catch((error) => {
+            console.log('errors are user info', error);
+        });
+    }
+
+    getChatList(userId,friendId) {
+        return axios.post('http://dev.testapi.com/api/getMessage/'+userId+'/'+friendId).then((response) => {
+            if(response && response.data) {
+                this.setState({chatLists:response.data});
+            }
+        }).catch((error) => {
+            console.log('errors are user info', error);
+        });
+    }
 
     handleTextChange(e) {
         if (e.keyCode === 13) {
             const payload = {
                 user_id: this.state.userId,
                 friend_id: this.state.friendId,
-                chat: this.state.chats
+                chat: this.state.text
             };
-            axios.post(process.env.API_URL+'/api/chat/sendChat', payload).then((response) => {
+            axios.post('http://dev.testapi.com/api/chat/sendChat', payload).then((response) => {
                 if(response) {
+                    this.getChatList(this.state.userId,this.state.friendId);
+                    this.setState({text:''});
                     return response;
                 }
             }).catch((error) => {
@@ -99,20 +84,22 @@ class Message extends React.PureComponent
                         <p className="right-top-top"><center><b>{this.state.activeFriend}</b></center></p>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="right-top-middle">
                     <Col lg={12}>
-                        <div className="right-top-middle">
+                        <div>
                             {this.state.chatLists.map((menu,index) => {
+                                let name = (this.state.friendId !== menu.user.id) ? 'Me' : menu.user.name;
+                                let profileImage = (this.state.friendId !== menu.user.id) ? menu.user.profile_img : this.state.activeFriendImg;
                                 return (
-                                    <div>
+                                    <div className="right-top-middle-msg-content">
                                         <p>
                                             <Row>
                                                 <Col lg={4}>
-                                                    <img src={this.state.activeFriendImg} className="image-icon" />
+                                                    <img src={profileImage} className="image-icon" />
                                                 </Col>
                                                 <Col lg={8}>
                                                     <Row>
-                                                        <Col lg={10}><b>{this.state.activeFriend}</b></Col>
+                                                        <Col lg={10}><b>{name}</b></Col>
                                                     </Row>
                                                     <Row>
                                                         <Col lg={10}>{menu.chat}</Col>
