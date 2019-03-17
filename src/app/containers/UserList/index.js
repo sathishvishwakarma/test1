@@ -1,41 +1,71 @@
 import React from "react";
 import './style.scss';
 import {Col, Container, Row} from "reactstrap";
+import axios from 'axios';
+import Message from "../Message";
 
 class UserList extends React.PureComponent
 {
     constructor(props){
         super(props);
         this.state = {
-            users:[{name:'Mark Harris',message:'Can you send me the file ?'},
-                   {name:'Design Team',message:'Sam Hilton - sent a image'},
-                   {name:'Betty M',message:'Good Job..!'},
-                   {name:'Isabella Barry',message:'Ok see you soon..!'},
-                   {name:'James Skinner',message:'Where are we on the project plans ?'},
-                   {name:'Irene Bailey',message:'No problem i got this'}]
+            friends:[],
+            activeUser:'',
+            activeUserEmail:'',
+            activeUserImage:'',
+            friendId:'',
         };
+
+    }
+
+    componentWillReceiveProps(props){
+        this.getFriendsLists(props);
+        this.getUserInfo(props)
+    }
+
+    selectedFriend(friendId) {
+        this.props.selectedFriend(friendId);
+    }
+
+    getFriendsLists(props) {
+        return axios.get('http://dev.testapi.com/api/friends/'+props.userId).then((response) => {
+            if(response && response.data) {
+                this.setState({friends:response.data});
+            }
+        }).catch((error) => {
+            console.log('errors are friends list', error);
+        });
+    }
+
+    getUserInfo(props) {
+        return axios.get('http://dev.testapi.com/api/'+props.userId).then((response) => {
+            if(response && response.data) {
+                this.setState({activeUser:response.data.name,activeUserEmail:response.data.email,activeUserImage:response.data.profile_img});
+            }
+        }).catch((error) => {
+            console.log('errors are user info', error);
+        });
     }
 
     render() {
-        let iconName = 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Alex_de_Minaur_%2842785492191%29_%28cropped%29.jpg/440px-Alex_de_Minaur_%2842785492191%29_%28cropped%29.jpg';
         return (
             <div>
                 <Container>
                     <Row className="left-middle-top left-middle-mid">
                         <Col lg={12}>
-                            <Row ><Col lg={12}>Flock Designers </Col></Row>
+                            <Row ><Col lg={12}>Bro4u Chat Application</Col></Row>
                             <Row>
                                 <Col lg={12}>
                                     <Row className="left-top">
                                         <Col lg={4}>
-                                            <img src={iconName} className="image-icon" />
+                                            <img src={this.state.activeUserImage} className="image-icon" />
                                         </Col>
                                         <Col lg={8}>
                                             <Row>
-                                                <Col lg={12}><b>{this.props.activeUser}</b></Col>
+                                                <Col lg={12}><b>{this.state.activeUser}</b></Col>
                                             </Row>
                                             <Row>
-                                                <Col lg={12}>{this.props.activeMessage}</Col>
+                                                <Col lg={12}>{this.state.activeUserEmail}</Col>
                                             </Row>
                                         </Col>
                                     </Row>
@@ -48,30 +78,35 @@ class UserList extends React.PureComponent
                     </Row>
                     <Row className="left-middle-top">
                         <Col lg={12}>
-                            {this.state.users.map((menu,index) => {
+                            {this.state.friends.map((menu,index) => {
                                 return (
-                                    <Row className="left-middle-mid">
-                                        <Col lg={12}>
-                                            <Row className="left-middle">
-                                                <Col lg={4}>
-                                                    <img src={iconName} className="image-icon" />
-                                                </Col>
-                                                <Col lg={8}>
-                                                    <Row>
-                                                        <Col lg={12}><b>{menu.name}</b></Col>
+                                    <div>
+                                        <Row className="left-middle-mid">
+                                            <Col lg={12}>
+                                                <a href="javascript:void(0)" onClick={this.selectedFriend.bind(this,menu.id)}>
+                                                    <Row className="left-middle">
+                                                        <Col lg={4}>
+                                                            <img src={menu.profile_img} className="image-icon" />
+                                                        </Col>
+                                                        <Col lg={8}>
+                                                            <Row>
+                                                                <Col lg={12}><b>{menu.name}</b></Col>
+                                                            </Row>
+                                                            <Row>
+                                                                <Col lg={12}>{menu.email}</Col>
+                                                            </Row>
+                                                        </Col>
                                                     </Row>
-                                                    <Row>
-                                                        <Col lg={12}>{menu.message}</Col>
-                                                    </Row>
-                                                </Col>
-                                            </Row>
-                                        </Col>
-                                    </Row>
+                                                </a>
+                                            </Col>
+                                        </Row>
+                                    </div>
                                 )
                             })}
                         </Col>
                     </Row>
                 </Container>
+
              </div>
         );
     }

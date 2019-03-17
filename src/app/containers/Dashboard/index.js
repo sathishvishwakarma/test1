@@ -9,11 +9,15 @@ class Dashboard extends React.PureComponent {
     constructor(props) {
         super(props);
         this.state = {
-            activeUser:'Zack Davey',
-            activeMessage:'on leave from 10-15 Aug'
+            friendId:'',
         };
+
+        this.selectedFriend = this.selectedFriend.bind(this);
     }
 
+    selectedFriend(friendId){
+        this.setState({friendId:friendId});
+    }
 
     render() {
         return (
@@ -23,10 +27,10 @@ class Dashboard extends React.PureComponent {
                     <Col lg={12}>
                         <Row>
                             <Col lg={3}>
-                                <UserList activeUser={this.state.activeUser} activeMessage={this.state.activeMessage}/>
+                                <UserList userId={this.props.userId} friendId={this.state.friendId} selectedFriend={this.selectedFriend} />
                             </Col>
                             <Col lg={9}>
-                                <Message activeUser={this.state.activeUser}/>
+                                <Message userId={this.props.userId} friendId={this.state.friendId} />
                             </Col>
                         </Row>
                     </Col>
