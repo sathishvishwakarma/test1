@@ -29,6 +29,17 @@ class UserList extends React.PureComponent
         this.props.selectedFriend(friendId,this.state.userdId);
     }
 
+    getLastChatDetails(friendId,index) {
+        let userId = localStorage.getItem('userId');
+        return axios.post('http://dev.testapi.com/api/getLastMessage/'+userId+'/'+friendId).then((response) => {
+            if(response && response.data) {
+                this.setState({ [`lastChat${index}`] :response.data.chat});
+            }
+        }).catch((error) => {
+            console.log('errors are user info', error);
+        });
+    }
+
     getFriendsLists(props) {
         return axios.get('http://dev.testapi.com/api/friends/'+props.userId).then((response) => {
             if(response && response.data) {
@@ -81,9 +92,9 @@ class UserList extends React.PureComponent
                     <Row className="left-middle-top">
                         <Col lg={12}>
                             {this.state.friends.map((menu,index) => {
+                                this.getLastChatDetails(menu.id,index);
                                 return (
-                                    <div>
-                                        <Row className="left-middle-mid">
+                                        <Row className="left-middle-mid" key={index}>
                                             <Col lg={12}>
                                                 <a href="javascript:void(0)" onClick={this.selectedFriend.bind(this,menu.id)}>
                                                     <Row className="left-middle">
@@ -95,14 +106,13 @@ class UserList extends React.PureComponent
                                                                 <Col lg={12}><b>{menu.name}</b></Col>
                                                             </Row>
                                                             <Row>
-                                                                <Col lg={12}>{menu.email}</Col>
+                                                                <Col lg={12}>{(this.state[`lastChat${index}`]) ? this.state[`lastChat${index}`] : 'No Messages'}</Col>
                                                             </Row>
                                                         </Col>
                                                     </Row>
                                                 </a>
                                             </Col>
                                         </Row>
-                                    </div>
                                 )
                             })}
                         </Col>

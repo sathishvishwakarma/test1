@@ -7,7 +7,6 @@ import Pusher from 'pusher-js';
 class Message extends React.PureComponent
 {
     constructor(props){
-        console.log('coming to message feidlsjdjsbkabjhsvdb',props);
         super(props);
         this.state = {
             chat:[],
@@ -93,7 +92,7 @@ class Message extends React.PureComponent
                                 return (
                                     <div className="right-top-middle-msg-content">
                                         <p>
-                                            <Row>
+                                            <Row key={index}>
                                                 <Col lg={4}>
                                                     <img src={profileImage} className="image-icon" />
                                                 </Col>
