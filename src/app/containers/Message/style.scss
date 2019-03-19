@@ -5,7 +5,7 @@
   width: 76%;
   height: 8%;
   margin-left: 23% !important;
-  background-color: white;
+  background-color: #A0A0A0;
   border: 0.5px solid black;
   color: black;
   text-align: left;
@@ -14,7 +14,7 @@
   position: fixed;
   left: 0;
   top: 50px;
-  width: 30%;
+  width: 98%;
   height: 75%;
   overflow: scroll !important;
   margin-left: 23% !important;
@@ -24,7 +24,7 @@
   .right-top-middle-msg-content {
     background-color: lightgray !important;
     margin-left: 15px !important;
-    width: 100% !important;
+    width: 30% !important;
   }
   .right-top-middle-left {
     float: left !important;
@@ -37,7 +37,7 @@
   width: 76%;
   height: 10%;
   margin-left: 23% !important;
-  background-color: white;
+  background-color: #A0A0A0;
   border: 0.5px solid black;
   color: black;
   text-align: center;
@@ -49,9 +49,13 @@
   width: 76%;
   height: 6%;
   margin-left: 23% !important;
-  background-color: white;
+  background-color: #A0A0A0;
   border: 0.5px solid black;
   color: black;
   text-align: center;
   margin-bottom: 20px;
+}
+.message-section-main-div {
+  width: 50% !important;
+  background-color: red !important;
 }

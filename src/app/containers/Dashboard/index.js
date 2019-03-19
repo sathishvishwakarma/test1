@@ -22,7 +22,7 @@ class Dashboard extends React.PureComponent {
 
     render() {
         return (
-            <div>
+            <div className="dashboard-main-div">
                 <title>Chatting Application</title>
                 <Row>
                     <Col lg={12}>

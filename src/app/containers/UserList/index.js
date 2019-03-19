@@ -2,7 +2,6 @@ import React from "react";
 import './style.scss';
 import {Col, Container, Row} from "reactstrap";
 import axios from 'axios';
-import Message from "../Message";
 
 class UserList extends React.PureComponent
 {
@@ -29,6 +28,8 @@ class UserList extends React.PureComponent
     }
 
     getLastChatDetails(friendId,userId,index) {
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
         return axios.post('http://dev.testapi.com/api/getLastMessage/'+userId+'/'+friendId).then((response) => {
             if(response && response.data) {
                 this.setState({ [`lastChat${index}`] :response.data.chat});
@@ -39,6 +40,8 @@ class UserList extends React.PureComponent
     }
 
     getFriendsLists(props) {
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
         return axios.get('http://dev.testapi.com/api/friends/'+props.userId).then((response) => {
             if(response && response.data) {
                 this.setState({friends:response.data});
@@ -49,6 +52,8 @@ class UserList extends React.PureComponent
     }
 
     getUserInfo(props) {
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
         return axios.get('http://dev.testapi.com/api/'+props.userId).then((response) => {
             if(response && response.data) {
                 this.setState({activeUser:response.data.name,activeUserEmail:response.data.email,activeUserImage:response.data.profile_img});
@@ -60,11 +65,11 @@ class UserList extends React.PureComponent
 
     render() {
         return (
-            <div>
+            <div className="user-list-section-main-div">
                 <Container>
                     <Row className="left-middle-top left-middle-mid">
                         <Col lg={12}>
-                            <Row ><Col lg={12}>Bro4u Chat Application</Col></Row>
+                            <Row ><Col lg={12}><b>Bro4u Chat Application</b></Col></Row>
                             <Row>
                                 <Col lg={12}>
                                     <Row className="left-top">
@@ -94,7 +99,7 @@ class UserList extends React.PureComponent
                                 return (
                                         <Row className="left-middle-mid" >
                                             <Col lg={12}>
-                                                <a href="javascript:void(0)" onClick={this.selectedFriend.bind(this,menu.id,menu.pivot.friend_id)}>
+                                                <span onClick={this.selectedFriend.bind(this,menu.id,menu.pivot.friend_id)}>
                                                     <Row className="left-middle">
                                                         <Col lg={4}>
                                                             <img src={menu.profile_img} className="image-icon" />
@@ -108,7 +113,7 @@ class UserList extends React.PureComponent
                                                             </Row>
                                                         </Col>
                                                     </Row>
-                                                </a>
+                                                </span>
                                             </Col>
                                         </Row>
                                 )

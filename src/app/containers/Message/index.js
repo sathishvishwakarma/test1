@@ -35,6 +35,8 @@ class Message extends React.PureComponent
     }
 
     getFriendInfo(friendId) {
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
         return axios.get('http://dev.testapi.com/api/'+friendId).then((response) => {
             if(response && response.data) {
                 this.setState({activeFriend:response.data.name,activeFriendEmail:response.data.email,activeFriendImg:response.data.profile_img});
@@ -45,6 +47,8 @@ class Message extends React.PureComponent
     }
 
     getChatList(userId,friendId) {
+        axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+        axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
         return axios.post('http://dev.testapi.com/api/getMessage/'+userId+'/'+friendId).then((response) => {
             if(response && response.data) {
                 this.setState({chatLists:response.data});
@@ -61,6 +65,8 @@ class Message extends React.PureComponent
                 friend_id: this.state.friendId,
                 chat: this.state.text
             };
+            axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+            axios.defaults.headers.common['Access-Control-Allow-Credentials'] = 'true';
             axios.post('http://dev.testapi.com/api/chat/sendChat', payload).then((response) => {
                 if(response) {
                     this.getChatList(this.state.userId,this.state.friendId);
@@ -85,31 +91,29 @@ class Message extends React.PureComponent
                 </Row>
                 <Row className="right-top-middle">
                     <Col lg={12}>
-                        <div>
-                            {this.state.chatLists.map((menu,index) => {
-                                let name = (this.state.friendId !== menu.user.id) ? 'Me' : menu.user.name;
-                                let profileImage = (this.state.friendId !== menu.user.id) ? menu.user.profile_img : this.state.activeFriendImg;
-                                return (
-                                    <div className="right-top-middle-msg-content">
-                                        <p>
-                                            <Row key={index}>
-                                                <Col lg={4}>
-                                                    <img src={profileImage} className="image-icon" />
-                                                </Col>
-                                                <Col lg={8}>
-                                                    <Row>
-                                                        <Col lg={10}><b>{name}</b></Col>
-                                                    </Row>
-                                                    <Row>
-                                                        <Col lg={10}>{menu.chat}</Col>
-                                                    </Row>
-                                                </Col>
-                                            </Row>
-                                        </p>
-                                    </div>
-                                );
-                            })}
-                        </div>
+                        {this.state.chatLists.map((menu,index) => {
+                            let name = (this.state.friendId !== menu.user.id) ? 'Me' : menu.user.name;
+                            let profileImage = (this.state.friendId !== menu.user.id) ? menu.user.profile_img : this.state.activeFriendImg;
+                            return (
+                                <div className="right-top-middle-msg-content">
+                                    <p>
+                                        <Row key={index}>
+                                            <Col lg={4}>
+                                                <img src={profileImage} className="image-icon" />
+                                            </Col>
+                                            <Col lg={8}>
+                                                <Row>
+                                                    <Col lg={10}><b>{name}</b></Col>
+                                                </Row>
+                                                <Row>
+                                                    <Col lg={10}>{menu.chat}</Col>
+                                                </Row>
+                                            </Col>
+                                        </Row>
+                                    </p>
+                                </div>
+                            );
+                        })}
                     </Col>
                 </Row>
                 <Row>
