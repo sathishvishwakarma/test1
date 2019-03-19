@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a90b34a-6c15-46d3-80d1-4377dbecc65c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/containers/Message/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/Message/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/containers/UserList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/containers/UserList/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,7 +61,7 @@
           <entry key="css" value="72" />
           <entry key="env" value="3" />
           <entry key="html" value="1" />
-          <entry key="js" value="9907" />
+          <entry key="js" value="10159" />
           <entry key="scss" value="1305" />
         </counts>
       </usages-collector>
@@ -72,7 +70,7 @@
           <entry key=".env file" value="3" />
           <entry key="CSS" value="72" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="9907" />
+          <entry key="JavaScript" value="10159" />
           <entry key="SCSS" value="1305" />
         </counts>
       </usages-collector>
@@ -128,8 +126,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+            <state relative-caret-position="171">
+              <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -170,12 +168,9 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>messageFlag</find>
-      <find>t</find>
       <find>this.state.friendId</find>
       <find>{friendId:</find>
       <find>getUserInfo</find>
-      <find>this.state.userId</find>
       <find>activeUser</find>
       <find>getFriendsLists</find>
       <find>activeFriendImg</find>
@@ -192,14 +187,17 @@
       <find>{friendId</find>
       <find>getLatestChat</find>
       <find>selec</find>
-      <find>selectedFriend</find>
       <find>selectedFriend`</find>
       <find>friends.map</find>
       <find>chatLists</find>
       <find>.map</find>
       <find>http://dev.testapi.com/</find>
-      <find>getLastChatDetails</find>
       <find>lastChat</find>
+      <find>console.log(</find>
+      <find>getLastChatDetails</find>
+      <find>userdId</find>
+      <find>this.state.userId</find>
+      <find>selectedFriend</find>
     </findStrings>
     <replaceStrings>
       <replace>className</replace>
@@ -345,12 +343,12 @@
       <workItem from="1550304590139" duration="7000" />
       <workItem from="1550306930176" duration="2054000" />
       <workItem from="1551424152086" duration="1278000" />
-      <workItem from="1552382971754" duration="57778000" />
+      <workItem from="1552382971754" duration="58976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70035000" />
+    <option name="totallyTimeSpent" value="71233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,10 +377,10 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32861635" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.32861635" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32861635" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32861635" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32861635" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -576,8 +574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/app/containers/UserList/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="52" column="24" selection-start-line="52" selection-start-column="24" selection-end-line="52" selection-end-column="24" />
+        <state relative-caret-position="171">
+          <caret line="33" column="46" lean-forward="true" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="46" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

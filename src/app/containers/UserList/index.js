@@ -20,17 +20,15 @@ class UserList extends React.PureComponent
     }
 
     componentWillReceiveProps(props){
-        this.setState({userdId:props.userdId});
         this.getFriendsLists(props);
         this.getUserInfo(props)
     }
 
-    selectedFriend(friendId) {
-        this.props.selectedFriend(friendId,this.state.userdId);
+    selectedFriend(friendId,userId) {
+        this.props.selectedFriend(friendId,userId);
     }
 
-    getLastChatDetails(friendId,index) {
-        let userId = localStorage.getItem('userId');
+    getLastChatDetails(friendId,userId,index) {
         return axios.post('http://dev.testapi.com/api/getLastMessage/'+userId+'/'+friendId).then((response) => {
             if(response && response.data) {
                 this.setState({ [`lastChat${index}`] :response.data.chat});
@@ -92,11 +90,11 @@ class UserList extends React.PureComponent
                     <Row className="left-middle-top">
                         <Col lg={12}>
                             {this.state.friends.map((menu,index) => {
-                                this.getLastChatDetails(menu.id,index);
+                                this.getLastChatDetails(menu.id,menu.pivot.friend_id,index);
                                 return (
-                                        <Row className="left-middle-mid" key={index}>
+                                        <Row className="left-middle-mid" >
                                             <Col lg={12}>
-                                                <a href="javascript:void(0)" onClick={this.selectedFriend.bind(this,menu.id)}>
+                                                <a href="javascript:void(0)" onClick={this.selectedFriend.bind(this,menu.id,menu.pivot.friend_id)}>
                                                     <Row className="left-middle">
                                                         <Col lg={4}>
                                                             <img src={menu.profile_img} className="image-icon" />
